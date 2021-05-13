@@ -1,0 +1,22 @@
+set nocompatible              
+filetype off                  
+set number
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
+
+call vundle#end()            
+filetype plugin indent on  
+
+let g:limelight_conceal_ctermfg = 238
+
+"Goyo.vim & Limelight.vim integration
+augroup SPACEVIM_GOYO
+	autocmd! User GoyoEnter Limelight
+        autocmd! User GoyoLeave Limelight!
+augroup END
+
